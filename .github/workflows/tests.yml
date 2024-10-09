@@ -1,0 +1,27 @@
+name: tests
+
+on:
+  pull_request:
+    types: [
+        # Default pull_request trigger types.
+        opened,
+        synchronize,
+        reopened,
+      ]
+
+
+permissions:
+  actions: read
+  contents: read
+  pull-requests: write
+
+jobs:
+  dismiss_stale_approvals:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dismiss stale pull request approvals
+        id: check_skip
+        uses: withgraphite/dismiss-stale-approvals@main
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+

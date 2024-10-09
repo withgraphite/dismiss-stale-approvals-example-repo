@@ -1,4 +1,4 @@
-name: tests
+name: Dismiss stale pull request approvals
 
 on:
   pull_request:

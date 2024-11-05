@@ -16,6 +16,7 @@ permissions:
 
 jobs:
   dismiss_stale_approvals:
+    name: Dismiss stale pull request approvals
     runs-on: ubuntu-latest
     steps:
       - name: Dismiss stale pull request approvals
